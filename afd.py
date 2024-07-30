@@ -8,16 +8,10 @@ class AutomatoFinitoDeterministico:
 
 
 def criar_afd():
-    estados = sorted(set(input("Digite os estados separados por espaço: ").split()))
-    alfabeto = sorted(set(input("Digite o alfabeto separado por espaço: ").split()))
+    estados = set(input("Digite os estados separados por espaço: ").split())
+    alfabeto = set(input("Digite o alfabeto separado por espaço: ").split())
     transicoes = {}
 
-    ''' exemplo de transição
-    transicoes={
-        'q0': {'a': {'q0', 'q1'}, 'b': {'q0'}},
-        'q1': {'a': {'q2'}},
-        'q2': {'b': {'q2'}}
-    },'''
 
     for estado in estados:
         transicoes[estado] = {}
@@ -29,7 +23,7 @@ def criar_afd():
                 transicoes[estado][simbolo] = destino
 
     estado_inicial = input("Digite o estado inicial: ")
-    estados_finais = sorted(set(input("Digite os estados finais separados por espaço: ").split()))
+    estados_finais = set(input("Digite os estados finais separados por espaço: ").split())
 
     return AutomatoFinitoDeterministico(
         estados=estados,
