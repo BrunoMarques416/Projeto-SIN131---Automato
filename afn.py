@@ -8,8 +8,8 @@ class AutomatoFinitoNaoDeterministico:
 
 
 def criar_afn():
-    estados = sorted(set(input("Digite os estados separados por espaço: ").split()))
-    alfabeto = sorted(set(input("Digite o alfabeto separado por espaço: ").split()))
+    estados = set(input("Digite os estados separados por espaço: ").split())
+    alfabeto = set(input("Digite o alfabeto separado por espaço: ").split())
     transicoes = {}
     for estado in estados:
         transicoes[estado] = {}
@@ -21,7 +21,7 @@ def criar_afn():
                 transicoes[estado][simbolo] = destinos
 
     estado_inicial = input("Digite o estado inicial: ")
-    estados_finais = sorted(set(input("Digite os estados finais separados por espaço: ").split()))
+    estados_finais = set(input("Digite os estados finais separados por espaço: ").split())
 
     return AutomatoFinitoNaoDeterministico(
         estados=estados,
